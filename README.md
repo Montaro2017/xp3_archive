@@ -10,6 +10,6 @@ eg: xp3_archive.exe extract -i D:\data.xp3 -o data
 ```
 
 ## 下载
-[下载地址]()
+[下载地址](https://gitee.com/Montaro2017/xp3_archive/releases)
 ## 编译
 执行目录下的**compile.bat**即可
