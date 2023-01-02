@@ -8,7 +8,7 @@ import 'package:xp3_archive/xp3_archive.dart';
 void main(List<String> args) {
   CommandRunner("xp3_archive", "A tool to extract xp3 archive.")
     ..addCommand(ExtractCommand())
-    // ..addCommand(ListCommand())
+    /// ..addCommand(ListCommand())
     ..run(args);
 }
 
@@ -25,11 +25,11 @@ class ExtractCommand extends Command {
         abbr: "p",
         help: "Set should print extract file name",
       )
-      ..addFlag(
-        "force",
-        abbr: "f",
-        help: "Set override write file",
-      )
+      // ..addFlag(
+      //   "force",
+      //   abbr: "f",
+      //   help: "Set override write file",
+      // )
       ..addOption(
         "input",
         abbr: "i",
@@ -49,7 +49,7 @@ class ExtractCommand extends Command {
     String? input = argResults?["input"];
     String? output = argResults?["output"];
     bool shouldPrint = argResults?["print"] ?? false;
-    bool force = argResults?["force"] ?? false;
+    bool force = false;
     if (input == null) {
       printUsage();
       return;
@@ -75,7 +75,7 @@ class ExtractCommand extends Command {
     print("Input file: ${inputFile.absolute.path}");
     print("Output dir: ${outputDir.absolute.path}");
     print("Print : $shouldPrint");
-    print("Force : $force");
+    /// print("Force : $force");
     print("");
 
     if (!inputFile.existsSync()) {
@@ -104,7 +104,7 @@ class ExtractCommand extends Command {
         bar.tick();
       }
     });
-    print("Extract successfully.");
+    print("Extract successfully!");
   }
 }
 
